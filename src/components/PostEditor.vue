@@ -41,9 +41,7 @@ export default {
                 userId: 'ALXhxjwgY9PinwNGHpfai6OWyDu2',
                 '.key': postId
             }
-            // this.$set(sourceData.posts, postId, post)
-            // this.$set(this.thread.posts, postId, postId)
-            // this.$set(sourceData.users[post.userId].posts, postId, postId)
+           
             this.text = ''
             this.$emit('save', {post})
         }
