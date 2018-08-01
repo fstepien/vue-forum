@@ -1,36 +1,33 @@
 <template>
-    <div  class="post">
-                  <div class="user-info">
-                      <a href="#" class="user-name">{{user.name}}</a>
+    <div class="post">
+        <div class="user-info">
+            <a href="#" class="user-name">{{user.name}}</a>
 
-                      <a href="profile.html#profile-details">
-                          <img class="avatar-large" :src="user.avatar" alt="">
-                      </a>
+            <a href="profile.html#profile-details">
+                <img class="avatar-large" :src="user.avatar" alt="">
+            </a>
 
-                      <p class="desktop-only text-small">{{userPostsCount}} posts</p>
+            <p class="desktop-only text-small">{{userPostsCount}} posts</p>
 
-                  </div>
+        </div>
 
-                  <div class="post-content">
-                      <div>
-                        {{post.text}}
-                      </div>
-                      
-                  </div>
+        <div class="post-content">
+            <div>
+                {{post.text}}
+            </div>
 
-
-
-                  <div class="post-date text-faded">
-                      {{post.published}}
-                  </div>
-
-                 
-              </div>
+        </div>
+        <AppDate :timestamp="post.publishedAt"></AppDate>
+    </div>
 </template>
 
 <script>
 import sourceData from '@/data'
+import AppDate from './AppDate'
 export default {
+    components: {
+        AppDate
+    },
     props: {
         post: {
             type: Object, 
@@ -45,7 +42,9 @@ export default {
             
             return  Object.keys(this.user.posts).length
         }
+        
     }
+    
 }
 </script>
 
