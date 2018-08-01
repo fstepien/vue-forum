@@ -1,6 +1,6 @@
 <template>
-<div class="col-full">
-  <ThreadList :threads="threads"/>
+  <div class="col-full">
+    <ThreadList :threads="threads" />
   </div>
 </template>
 <script>
