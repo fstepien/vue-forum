@@ -10,7 +10,7 @@
 
 </template>
 <script>
-import sourceData from '@/data.json'
+
 import PostList from '@/components/PostList'
 export default {
     props: {
@@ -21,14 +21,14 @@ export default {
     },
     data() {
         return {
-            thread: sourceData.threads[this.$route.params.id],
+            thread: this.$store.state.threads[this.$route.params.id],
             text: ''
         }
     },
     computed: {
         posts() {
             const postIds = Object.values(this.thread.posts)
-           return  Object.values(sourceData.posts).filter(post => postIds.includes(post['.key']))
+           return  Object.values(this.$store.state.posts).filter(post => postIds.includes(post['.key']))
         }
     },
     methods: {
